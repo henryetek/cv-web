@@ -9,30 +9,19 @@ import {
   Linkedin, 
   MapPin, 
   Code,
-  CheckCircle2,
-  MessageSquare,
   Briefcase,
   GraduationCap,
-  ChevronRight
+  ChevronRight,
+  ShieldCheck
 } from 'lucide-react';
 
 const App = () => {
-  const primaryBg = "bg-orange-600";
-
-  const skills = [
-    { name: "SAP Business One v10", icon: <Settings className="w-5 h-5" />, desc: "Komplexní správa, instalace addonů a hloubková konfigurace systému." },
-    { name: "B1UP (Boyum IT)", icon: <Code className="w-5 h-5" />, desc: "Pokročilá customizace procesů a tvorba automatizačních scénářů." },
-    { name: "SQL & Reporting", icon: <Database className="w-5 h-5" />, desc: "Hloubková analýza dat, uložené procedury a Crystal Reports." },
-    { name: "Power BI", icon: <BarChart className="w-5 h-5" />, desc: "Vizualizace dat a propojování SAP B1 s externími zdroji (Excel, TXT)." },
-    { name: "IT Infrastruktura", icon: <Server className="w-5 h-5" />, desc: "Správa Windows Serverů, podnikových DB a cloudových řešení." },
-    { name: "Business Analysis", icon: <MessageSquare className="w-5 h-5" />, desc: "Návrh technických řešení na základě interních byznys požadavků." }
-  ];
-
   const experience = [
     {
       company: "mmcité street furniture",
       role: "SAP B1 specialista",
       period: "2022 – Současnost",
+      location: "Uherské Hradiště / Hybrid",
       points: [
         "Správa a rozvoj systému SAP Business One v10 pro mezinárodní holding",
         "Customizace a automatizace procesů přes addon B1UP",
@@ -44,6 +33,7 @@ const App = () => {
       company: "Versino CZ",
       role: "Aplikační konzultant",
       period: "2021 – 2021",
+      location: "Brno",
       points: [
         "Technická správa SAP B1 pro portfolio externích klientů",
         "Napojování datových zdrojů ze SAP B1 přímo do Power BI",
@@ -54,9 +44,10 @@ const App = () => {
       company: "mmcité + a.s.",
       role: "IT Manager",
       period: "2015 – 2020",
+      location: "Bílovice",
       points: [
-        "Administrace SAP B1, dohled nad systémem a podpora uživatelů",
-        "Kompletní správa podnikové IT infrastruktury a Windows Serverů",
+        "Administrace SAP B1, Windows Serverů a infrastruktury",
+        "Navrhování IT řešení a podpora klíčových uživatelů",
         "Zajištění integrity a bezpečnosti podnikových dat"
       ]
     },
@@ -64,81 +55,76 @@ const App = () => {
       company: "Kovocite a.s.",
       role: "IT/IS manager/administrator",
       period: "2008 – 2014",
+      location: "Bílovice",
       points: [
-        "Administrace SAP B1 a jednání s dodavateli technologií",
-        "Správa domén, serverů a kompletního IT zázemí společnosti"
+        "Administrace SAP B1 a dohled nad systémem",
+        "Kompletní správa serverů a IT zázemí společnosti"
       ]
     }
   ];
 
+  const skills = [
+    { name: "SAP Business One v10", icon: <Settings className="w-5 h-5" />, desc: "Komplexní správa, instalace addonů a hloubková konfigurace systému." },
+    { name: "B1UP (Boyum IT)", icon: <Code className="w-5 h-5" />, desc: "Pokročilá customizace procesů a tvorba automatizačních scénářů." },
+    { name: "SQL & Reporting", icon: <Database className="w-5 h-5" />, desc: "Hloubková analýza dat, komplexní dotazy a Crystal Reports." },
+    { name: "Power BI", icon: <BarChart className="w-5 h-5" />, desc: "Vizualizace dat a propojování SAP B1 i externích zdrojů." },
+    { name: "IT Infrastruktura", icon: <Server className="w-5 h-5" />, desc: "Správa Windows Serverů, podnikových DB a cloudových řešení." },
+    { name: "Business Analysis", icon: <ShieldCheck className="w-5 h-5" />, desc: "Analýza požadavků a návrh technických řešení pro byznys." }
+  ];
+
   return (
-    <div className="min-h-screen bg-white text-gray-900 font-sans selection:bg-orange-100 selection:text-orange-900">
-      {/* Navigation */}
+    <div className="min-h-screen bg-white text-gray-900 font-sans selection:bg-orange-100 selection:text-orange-900 leading-normal">
       <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 px-6">
         <div className="max-w-5xl mx-auto h-16 flex items-center justify-between">
-          <span className="font-bold text-xl tracking-tight">
+          <span className="font-bold text-xl tracking-tight text-gray-900">
             <span className="text-orange-600">Roman </span>Matušek
           </span>
           <div className="hidden md:flex space-x-8 text-sm font-medium text-gray-500">
             <a href="#about" className="hover:text-orange-600 transition-colors">Profil</a>
             <a href="#skills" className="hover:text-orange-600 transition-colors">Dovednosti</a>
             <a href="#experience" className="hover:text-orange-600 transition-colors">Zkušenosti</a>
-            <a href="#education" className="hover:text-orange-600 transition-colors">Vzdělání</a>
           </div>
-          <a href="#contact" className="text-sm font-bold text-orange-600 border border-orange-600 px-4 py-2 rounded-lg hover:bg-orange-50 transition-all">
+          <a href="mailto:romanmatusek2@gmail.com" className="text-sm font-bold text-orange-600 border border-orange-600 px-4 py-2 rounded-lg hover:bg-orange-50 transition-all">
             Kontakt
           </a>
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <header id="about" className="pt-20 pb-20 border-b border-gray-50">
-        <div className="max-w-5xl mx-auto px-6">
-          {/* Horní blok - Jméno a Titul */}
-          <div className="mb-6">
+      <header id="about" className="pt-20 pb-20 border-b border-gray-50 px-6">
+        <div className="max-w-5xl mx-auto">
+          <div className="mb-6 text-left">
             <h1 className="text-5xl md:text-6xl font-extrabold text-gray-900 mb-4 tracking-tight">
               Ing. Roman Matušek
             </h1>
             <h2 className="text-2xl md:text-3xl font-semibold text-orange-600 flex items-center gap-3">
-              <Briefcase className="w-7 h-7" /> SAP B1 Specialist | ERP Process & Data Analyst
+              <Briefcase className="w-7 h-7 shrink-0" /> SAP B1 Specialist | ERP Process & Data Analyst
             </h2>
           </div>
           
-          {/* Prostřední blok - Shrnutí (zarovnáno do bloku pro efekt obdélníku) */}
           <p className="text-xl text-gray-600 leading-relaxed mb-10 w-full text-justify">
             ERP specialista s více než 15letou praxí v IT managementu a správě systému SAP Business One. 
             Zaměřuji se na transformaci interních byznys požadavků do funkčních technických řešení 
-            s využitím SQL, Power BI a automatizace přes B1UP. Tato kombinace zkušeností mi umožňuje 
+            s využitím SQL, Excel, PBI, B1UP. Tato kombinace zkušeností společně s využíváním moderních AI nástrojů mi umožňuje 
             efektivně propojovat svět byznysu s moderními technologiemi a datovou analytikou.
           </p>
 
-          {/* Spodní blok - Kontakty rozprostřené na šířku */}
           <div className="flex flex-wrap justify-between items-center gap-y-4 text-sm font-medium text-gray-500 border-t border-gray-100 pt-8 w-full">
-            <div className="flex items-center gap-2">
-              <MapPin size={18} className="text-orange-600" /> Uherské Hradiště / Remote
-            </div>
-            <div className="flex items-center gap-2">
-              <Mail size={18} className="text-orange-600" /> romanmatusek2@gmail.com
-            </div>
-            <div className="flex items-center gap-2">
-              <Phone size={18} className="text-orange-600" /> +420 724 780 950
-            </div>
-            <div className="flex items-center gap-2">
-              <Linkedin size={18} className="text-orange-600" /> linkedin.com/in/roman-matusek
-            </div>
+            <div className="flex items-center gap-2"><MapPin size={18} className="text-orange-600" /> Uherské Hradiště / Remote</div>
+            <div className="flex items-center gap-2"><Mail size={18} className="text-orange-600" /> romanmatusek2@gmail.com</div>
+            <div className="flex items-center gap-2"><Phone size={18} className="text-orange-600" /> +420 724 780 950</div>
+            <div className="flex items-center gap-2"><Linkedin size={18} className="text-orange-600" /> linkedin.com/in/roman-matusek</div>
           </div>
         </div>
       </header>
 
-      {/* Skills Grid */}
-      <section id="skills" className="py-24 bg-gray-50">
-        <div className="max-w-5xl mx-auto px-6">
-          <h3 className="text-3xl font-bold mb-12 flex items-center gap-3">
+      <section id="skills" className="py-24 bg-gray-50 px-6">
+        <div className="max-w-5xl mx-auto">
+          <h3 className="text-3xl font-bold mb-12 flex items-center gap-3 text-gray-900">
             <Settings className="text-orange-600" /> Technické kompetence
           </h3>
           <div className="grid md:grid-cols-3 gap-6">
             {skills.map((skill, idx) => (
-              <div key={idx} className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+              <div key={idx} className="bg-white p-8 rounded-xl border border-gray-200 shadow-sm hover:border-orange-200 transition-all text-left">
                 <div className="text-orange-600 mb-4">{skill.icon}</div>
                 <h4 className="font-bold text-lg mb-2">{skill.name}</h4>
                 <p className="text-gray-500 text-sm leading-relaxed">{skill.desc}</p>
@@ -148,36 +134,31 @@ const App = () => {
         </div>
       </section>
 
-      {/* Experience Timeline */}
-      <section id="experience" className="py-24 bg-gray-900 text-white">
-        <div className="max-w-5xl mx-auto px-6">
-          <div className="mb-16">
-            <h3 className="text-3xl font-bold mb-4 flex items-center gap-3">
-              <Briefcase className="text-orange-500" /> Pracovní historie
-            </h3>
-            <div className="h-1 w-20 bg-orange-500 rounded-full"></div>
-          </div>
-          
+      <section id="experience" className="py-24 bg-gray-900 text-white px-6">
+        <div className="max-w-5xl mx-auto">
+          <h3 className="text-3xl font-bold mb-16 flex items-center gap-3">
+            <Briefcase className="text-orange-500" /> Pracovní historie
+          </h3>
           <div className="space-y-16">
             {experience.map((exp, idx) => (
-              <div key={idx} className="relative">
-                <div className="md:grid md:grid-cols-12 gap-8 items-start">
-                  <div className="md:col-span-3 text-orange-500 font-bold text-lg mb-2 md:mb-0 pt-1">
-                    {exp.period}
+              <div key={idx} className="md:grid md:grid-cols-12 gap-8 items-start border-l border-gray-700 pl-8 relative text-left">
+                <div className="absolute w-3 h-3 bg-orange-500 rounded-full -left-[6.5px] top-2"></div>
+                <div className="md:col-span-3 text-orange-500 font-bold text-lg mb-2 md:mb-0">
+                  {exp.period}
+                </div>
+                <div className="md:col-span-9">
+                  <h4 className="text-2xl font-bold mb-1">{exp.role}</h4>
+                  <div className="text-gray-400 font-medium mb-6 uppercase tracking-widest text-xs flex items-center gap-2">
+                    {exp.company} <span className="text-gray-600 font-normal">•</span> {exp.location}
                   </div>
-                  <div className="md:col-span-9 border-l border-gray-700 pl-8 relative pb-2">
-                    <div className="absolute w-3 h-3 bg-orange-500 rounded-full -left-[6.5px] top-3"></div>
-                    <h4 className="text-2xl font-bold mb-1">{exp.role}</h4>
-                    <div className="text-gray-400 font-medium mb-6 uppercase tracking-widest text-xs">{exp.company}</div>
-                    <ul className="space-y-4">
-                      {experience[idx].points.map((point, pIdx) => (
-                        <li key={pIdx} className="flex items-start gap-3 text-gray-300 leading-relaxed group">
-                          <ChevronRight size={16} className="text-orange-500 mt-1 shrink-0 group-hover:translate-x-1 transition-transform" />
-                          <span>{point}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                  <ul className="space-y-4 text-gray-300">
+                    {exp.points.map((p, i) => (
+                      <li key={i} className="flex items-start gap-3">
+                        <ChevronRight size={16} className="text-orange-500 mt-1 shrink-0" />
+                        <span>{p}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
             ))}
@@ -185,65 +166,11 @@ const App = () => {
         </div>
       </section>
 
-      {/* Education Section */}
-      <section id="education" className="py-24 bg-white">
-        <div className="max-w-5xl mx-auto px-6">
-          <h3 className="text-3xl font-bold mb-12 flex items-center gap-3 text-gray-900">
-            <GraduationCap className="text-orange-600" /> Vzdělání a certifikace
-          </h3>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="border-l-4 border-orange-600 pl-8 py-2">
-              <div className="font-bold text-xl text-gray-900">VŠB – TU Ostrava</div>
-              <div className="text-gray-600 text-lg">Ing., Automatizace a informační technologie</div>
-              <div className="text-sm text-gray-400 mt-2 font-medium">1999 – 2006</div>
-            </div>
-            <div className="bg-orange-50 border-l-4 border-orange-600 pl-8 p-6 rounded-r-xl">
-              <div className="font-bold text-xl text-orange-900">ENGETO Certified Data Analyst</div>
-              <div className="text-orange-700 font-medium mt-1 text-sm italic">Specializace na SQL, Power BI a analýzu dat</div>
-              <div className="inline-block mt-4 px-3 py-1 bg-orange-200 text-orange-900 text-xs font-bold rounded-full">
-                ZÍSKÁNO 2023
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer id="contact" className="bg-gray-50 py-24 border-t border-gray-200">
-        <div className="max-w-5xl mx-auto px-6 text-center">
-          <h2 className="text-3xl font-bold mb-12">Kontaktujte mě</h2>
-          <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16">
-            <a href="mailto:romanmatusek2@gmail.com" className="flex items-center gap-4 group">
-              <div className="w-12 h-12 rounded-full bg-white shadow-sm flex items-center justify-center text-orange-600 group-hover:bg-orange-600 group-hover:text-white transition-all">
-                <Mail size={24} />
-              </div>
-              <div className="text-left">
-                <div className="text-xs text-gray-400 font-bold uppercase">Email</div>
-                <div className="font-bold text-gray-700">romanmatusek2@gmail.com</div>
-              </div>
-            </a>
-            <a href="tel:+420724780950" className="flex items-center gap-4 group text-left">
-              <div className="w-12 h-12 rounded-full bg-white shadow-sm flex items-center justify-center text-orange-600 group-hover:bg-orange-600 group-hover:text-white transition-all">
-                <Phone size={24} />
-              </div>
-              <div className="text-left">
-                <div className="text-xs text-gray-400 font-bold uppercase">Telefon</div>
-                <div className="font-bold text-gray-700">+420 724 780 950</div>
-              </div>
-            </a>
-            <a href="https://www.linkedin.com/in/roman-matusek-67b65260" target="_blank" rel="noreferrer" className="flex items-center gap-4 group text-left">
-              <div className="w-12 h-12 rounded-full bg-white shadow-sm flex items-center justify-center text-orange-600 group-hover:bg-orange-600 group-hover:text-white transition-all">
-                <Linkedin size={24} />
-              </div>
-              <div className="text-left">
-                <div className="text-xs text-gray-400 font-bold uppercase">LinkedIn</div>
-                <div className="font-bold text-gray-700">Roman Matušek</div>
-              </div>
-            </a>
-          </div>
-          <div className="mt-20 text-gray-400 text-xs">
-            © {new Date().getFullYear()} Ing. Roman Matušek • Digitální životopis
-          </div>
+      <footer className="bg-gray-50 py-20 border-t border-gray-200 px-6 text-center">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-gray-400 text-[10px] uppercase tracking-[0.3em]">
+            © {new Date().getFullYear()} Ing. Roman Matušek
+          </p>
         </div>
       </footer>
     </div>
